@@ -17,7 +17,8 @@ class ViewController: UIViewController,
   private var keyboardController: KeyboardController!
   
   private let segueIdentifier = "SettingsViewControllerSegue"
-  
+    private var leftBarButtonItem: UIBarButtonItem!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -47,12 +48,22 @@ class ViewController: UIViewController,
     // in the function that you fire when the button is tapped
     // START YOUR CODE HERE
     // ...
+    leftBarButtonItem = UIBarButtonItem(title: "Reset",
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(didTapSettingsButton))
+    leftBarButtonItem.tintColor = .white
+    navigationItem.leftBarButtonItem = leftBarButtonItem
     // END YOUR CODE HERE
   }
-  
+    
+
   @objc private func didTapSettingsButton() {
     performSegue(withIdentifier: segueIdentifier, sender: nil)
   }
+    @objc private func didTapResetButton() {
+       boardController.resetBoardWithCurrentSettings()
+      }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == segueIdentifier else { return }
