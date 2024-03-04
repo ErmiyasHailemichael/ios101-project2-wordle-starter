@@ -51,9 +51,17 @@ class BoardController: NSObject,
   func resetBoardWithCurrentSettings() {
     // START YOUR CODE HERE
     // ...
+      let currentSettings :[String: Any]=[
+        kNumLettersKey: numItemsPerRow,
+        kNumGuessesKey: numRows,
+        kWordThemeKey: SettingsManager.shared.settingsDictionary[kWordThemeKey] as! String,
+        kIsAlienWordleKey: isAlienWordle
+    ]
+      resetBoard(with: currentSettings)
     // END YOUR CODE HERE
   }
-  
+//  The reset button is not reseting instead it will take me to the setting option when i clicked the reset button -
+//    Visit office hour on monday 
     
   // Exercise 1: Implement applyNumLettersSettings to change the number of letters in the goal word
   // Tip 1: Use a breakpoint to inspect or print the `settings` argument
