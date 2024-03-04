@@ -79,6 +79,9 @@ class BoardController: NSObject,
   private func applyNumGuessesSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
     // ...
+      if let numGuesses = settings[kNumGuessesKey] as? Int{
+          numRows = numGuesses
+      }
     // END YOUR CODE HERE
   }
   
