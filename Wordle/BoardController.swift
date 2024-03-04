@@ -55,8 +55,6 @@ class BoardController: NSObject,
   }
   
     
-//Test test test
-    
   // Exercise 1: Implement applyNumLettersSettings to change the number of letters in the goal word
   // Tip 1: Use a breakpoint to inspect or print the `settings` argument
   // Tip 2: There is a constant `kNumLettersKey` in Constants.swift that you can use as the key to grab the value in the dictionary
@@ -66,6 +64,9 @@ class BoardController: NSObject,
   private func applyNumLettersSettings(with settings: [String: Any]) {
     // START YOUR CODE HERE
     // ...
+      if let numLetters = settings[kNumLettersKey] as? Int{
+          numItemsPerRow = numLetters
+      }
     // END YOUR CODE HERE
   }
   
