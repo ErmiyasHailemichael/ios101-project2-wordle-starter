@@ -61,7 +61,7 @@ class BoardController: NSObject,
     // END YOUR CODE HERE
   }
 //  The reset button is not reseting instead it will take me to the setting option when i clicked the reset button -
-//    Visit office hour on monday 
+//    Visit office hour on monday
     
   // Exercise 1: Implement applyNumLettersSettings to change the number of letters in the goal word
   // Tip 1: Use a breakpoint to inspect or print the `settings` argument
